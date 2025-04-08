@@ -3,13 +3,17 @@
 #April 6,2025
 
 import praw
+from configparser import ConfigParser
 
-reddit = praw.Reddit(
-    client_id ="Me_AgYAzt6DcpRjFZYo8kw",
-    client_secret ="-7HHxvEIZeqLIKHCJ-dXB_7pfZ-vQw",
-    user_agent =("Yeshua's bot 0.1 - by /u/b0at56, and github.com/Yeshii64/redditBot"),
-    username = "b0at56",
-    password = "redditisgreat64!",
-)
+config = ConfigParser()
+#finallyyy it worked, using a ini file so that my info doesnt get leaked
+path = r"C:\Users\qyut1\OneDrive\Desktop\reddit bot\redditBot\praw.ini"
+config.read(path)
+print(config.read(path))
+print(config.sections())
+print( config["BOT1"]["username"])
 
-print(reddit.read_only)
+
+#testing 
+#for submission in reddit.submission("test").hot(limit=10):
+ #   print(submission.title)
